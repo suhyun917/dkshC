@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('6d45c13eecd371a53271143949496a8e');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '동우와 수현이가 결혼합니다.',
+        description: '9월17일,오후12시 인천 원인재로 소중한 여러분을 초대합니다.',
+        imageUrl:
+          'https://postfiles.pstatic.net/MjAyMjA4MDJfMTM1/MDAxNjU5NDE5MTk2OTM1.JCrWzpyTP3kj4ZZ1fvIeoHQebQhxbCUmjOifRV0OL2Eg.TLhtlIrXrstyM-l46nZ4qWkSrJ7bSSOs7S8Ey6QIY20g.JPEG.suhyun917/카카오표지(C).jpg?type=w773',
+        link: {
+          mobileWebUrl: 'https://dkshc.quv.kr/',
+          webUrl: 'https://dkshc.quv.kr/',
+        },
+      },
+      social: {
+        likeCount: 99999, //99999가 최대입니다
+        commentCount: 99999, //99999가 최대입니다
+        sharedCount: 99999, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '모바일청첩장',
+          link: {
+            mobileWebUrl: 'https://dkshc.quv.kr/',
+            webUrl: 'https://dkshc.quv.kr/',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
